@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker run -it -d -p 80:8080 -p 21:21 -p 137:137 -p 138:138 -p 139:139 -p 445:445 -p 7070:7070 \
+	   --volume=/var/containers/alfresco/opt/alfresco-community/alf_data:/opt/alfresco-community/alf_data:z  \
+	   --volume=/var/containers/alfresco/opt/alfresco-community/tomcat/shared/classes:/opt/alfresco-community/\tomcat/shared/classes:z \
+           -e DB_PASSWORD=alfresco123 \
+	   -e DB_USERNAME=alfresco    \
+	   -e DB_NAME=alfresco	      \
+	   -e DB_HOST=172.17.0.2      \
+	   alfresco-alfa
+
